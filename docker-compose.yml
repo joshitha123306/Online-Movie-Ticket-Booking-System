@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    container_name: movie_frontend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    container_name: movie_backend
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
