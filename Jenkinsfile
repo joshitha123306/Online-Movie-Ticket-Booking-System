@@ -228,7 +228,7 @@ pipeline {
         
         always {
             script {
-                echo "Pipeline execution completed at $(date)"
+                sh 'echo "Pipeline execution completed at $(date)"'
             }
         }
     }
