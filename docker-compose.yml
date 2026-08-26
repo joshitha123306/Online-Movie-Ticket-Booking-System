@@ -5,6 +5,10 @@ services:
     container_name: movie_frontend
     ports:
       - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - movie-network
     restart: unless-stopped
 
   backend:
@@ -13,4 +17,10 @@ services:
     container_name: movie_backend
     ports:
       - "5000:5000"
+    networks:
+      - movie-network
     restart: unless-stopped
+
+networks:
+  movie-network:
+    driver: bridge

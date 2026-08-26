@@ -1,4 +1,4 @@
-const backendURL = "http://localhost:5000";
+const backendURL = "/api";
 
 async function loadMovies() {
 
@@ -52,7 +52,7 @@ document.getElementById("bookingForm").addEventListener("submit",
         const movie = document.getElementById("movie").value;
         const tickets = document.getElementById("tickets").value;
 
-        const response = await fetch(`${backendURL}/book`, {
+        const response = await fetch(`/api/book`, {
 
             method: "POST",
 
